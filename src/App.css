@@ -1,4 +1,31 @@
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.problem-card {
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.solution-card {
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  margin-bottom: 30px;
+}
+
+.code-block {
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.App {
   text-align: center;
 }
 

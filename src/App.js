@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import ProblemList from './components/ProblemList';
+import ProblemDetail from './components/ProblemDetail';
+import AddProblem from './components/AddProblem';
+import AddSolution from './components/AddSolution';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="container mt-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/problems" element={<ProblemList />} />
+            <Route path="/problems/:id" element={<ProblemDetail />} />
+            <Route path="/add-problem" element={<AddProblem />} />
+            <Route path="/problems/:id/add-solution" element={<AddSolution />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
